@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="jquery-3.6.0.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container my-3">
+        <div class="row" id="row">
+            <div class="col-xl-3 col-md-4 col-sm-6 py-1 masonry-item">
+                    <img src="img/1.jpeg" class="w-100 shadow rounded" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+<script>
+        const arrImgs=[1,12,3,4,5,6,11,8,9,6,3,10];
+        let html ="";
+        for(let i=0;i<arrImgs.length;i++){
+            html+=`
+            <div class="col-xl-3 col-md-4 col-sm-6 py-2 masonry-item">
+               
+                    <img src="img/${arrImgs[i]}.jpeg" class="w-100 shadow rounded" alt="">
+                
+            </div>
+            `
+        }
+        $("#row").append(html);
+        setTimeout(()=>{
+            $("#row").masonry({
+                itemSelector:".masonry-item",
+                columnWidth: '.col-xl-3'
+                });
+        },1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>JQuery</title>
+</head>
+<body>
+
+                    <li >
+                        <span>Text</span>
+                        <button class="btn">&times;</button>
+                    </li>
+                    <li >
+                        <span>Text</span>
+                        <button class="btn">&times;</button>
+                    </li>                  
+                    <li >
+                        <span>Text</span>
+                        <button class="btn">&times;</button>
+                    </li>
+            
+
+    <script>
+        $(function(ev){
+            $(".btn").click(function(ev){
+                let liEle = $(this).closest("li");//$ chọn ==> $(this) ->ép 1 cái biến về opj ===> muốn dùng hàm closest thì buộc dùng $(this)
+                //liEle.remove();
+                liEle.slideUp(1000, ()=>{
+                    alert("Xóa xong!!");//sau 1s sẽ hệ bảng alert
+                });//ẩn 1 thẻ li từ dưới lên=> tg tính bằng miligiay///slideDown////fadeOut: mờ dần
+
+            });
+
+            /*$(".btn").click((ev)=>{
+                let liEle =$(ev.currentTarget).closest("li");
+                liEle.remove();
+            });*/
+
+        });
+    </script>
+</body>
+</html>

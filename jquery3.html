@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery-3.6.0.js"></script>
+    <title>JQuery</title>
+</head>
+<body>
+    <div id="container" >
+        <p>Hello 1</p>
+        <p id="key">Hello 2</p>
+        <p>Hello 3</p>
+        <p>Hello 4</p>
+    </div>
+    
+    <script>
+        $(function(ev){
+            let key =$("#key");
+
+            let hello1 = key.prev();//thêm trc
+
+            let hello3 = key.next();//liền tiếp theo
+
+            let parent = key.parent();//lấy cha
+
+            let child =key.find("b");//lấy con
+
+            let bdy = key.closest("body");//key tìm 1 body gần nhấy
+
+            console.log(bdy.get(0));
+
+            //key.text(hello1.text());
+        });
+    </script>
+</body>
+</html>
